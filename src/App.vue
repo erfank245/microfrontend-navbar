@@ -1,9 +1,9 @@
 <template>
   <div>
     <nav>
-      <a
+      <router-link
         class="logo-link"
-        href="/"
+        to="/"
       >
         <img
           class="logo"
@@ -11,14 +11,14 @@
           src="https://graphicallyapp.ir/MainLogo.png"
         />
         <div class="product-name">میکرو-فرانت اند</div>
-      </a>
-      <a
+      </router-link>
+      <router-link
         class="nav-link"
         active-class="active-nav-link"
-        href="/link-1"
+        to="/link-1"
       >
         لینک ۱
-      </a>
+      </router-link>
     </nav>
     <router-view />
   </div>

@@ -1,16 +1,16 @@
 import "./set-public-path";
 import singleSpaVue from 'single-spa-vue';
-import { createMemoryHistory, createRouter } from "vue-router";
+import { createRouter,createWebHistory } from "vue-router";
 import { h, createApp } from "vue";
 
 import App from "./App.vue";
 
 const routes = [
-  { path: "/" }
+  { path: "/" },
 ];
 
 const router = createRouter({
-  history: createMemoryHistory(process.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL),
   routes,
 })
 
