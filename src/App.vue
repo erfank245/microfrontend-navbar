@@ -20,7 +20,6 @@
         لینک ۱
       </router-link>
     </nav>
-    <router-view />
   </div>
 </template>
 
