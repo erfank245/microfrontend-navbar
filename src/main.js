@@ -5,10 +5,12 @@ import { h, createApp } from "vue";
 
 import App from "./App.vue";
 
-const routes = [{ path: "/", exact: true, redirect: "/asdnksajdnjk"}];
+const routes = [
+  { path: "/" }
+];
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createMemoryHistory(process.env.BASE_URL),
   routes,
 })
 
@@ -18,9 +20,6 @@ const vueLifecycles = singleSpaVue({
     render() {
       return h(App, {
         links: this.links,
-        name: this.name,
-        mountParcel: this.mountParcel,
-        // singleSpa: this.singleSpa,
       });
     },
   },

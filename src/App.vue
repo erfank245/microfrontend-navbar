@@ -1,54 +1,24 @@
 <template>
   <div>
-    <nav class="navbar-links">
-      <div class="navbar-links">
-        <ul>
-          <li>
-            <a
-              class="nav-link logo-link"
-              href="https://github.com/vue-microfrontends/root-config"
-            >
-              <div class="logo-row">
-                <img
-                  class="logo"
-                  alt="Cute puppy"
-                  src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages1.fanpop.com%2Fimages%2Fphotos%2F1900000%2FPuppy-3-dogs-1993798-1024-768.jpg&f=1&nofb=1"
-                />
-                <div class="product-name">Microfrontends</div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <router-link
-              to="/view-doggos"
-              class="nav-link"
-              active-class="active-nav-link"
-              >View your doggos</router-link
-            >
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <router-link
-              to="/rate-doggos"
-              class="nav-link"
-              active-class="active-nav-link"
-              >Rate some doggos</router-link
-            >
-          </li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <li>
-            <a class="nav-link"
-              >Code / Documentation</a
-            >
-          </li>
-        </ul>
-      </div>
+    <nav>
+      <a
+        class="logo-link"
+        href="/"
+      >
+        <img
+          class="logo"
+          alt="logo"
+          src="https://graphicallyapp.ir/MainLogo.png"
+        />
+        <div class="product-name">میکرو-فرانت اند</div>
+      </a>
+      <a
+        class="nav-link"
+        active-class="active-nav-link"
+        href="/link-1"
+      >
+        لینک ۱
+      </a>
     </nav>
     <router-view />
   </div>
@@ -64,66 +34,51 @@ export default {
 
 <style scoped>
 nav {
+  direction: rtl;
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
-  width: 100%;
+  height: 80px;
+  padding: 0 calc(calc(100vw - 700px) / 2);
   background-color: white;
   transition: left 0.2s ease-in-out;
-  box-shadow: 0.2rem 0 0.2rem var(--light-gray);
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0.2rem 1rem #00000040;
 }
 .navbar-links {
   display: flex;
-  justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
-
-.logo-row {
+.logo-link {
   display: flex;
   align-items: center;
-  font-weight: bold;
-  font-size: 1.8rem;
+  text-decoration: none;
 }
-.logo {
-  height: 4rem;
+.logo-link .logo {
+  height: 60px;
 }
-.product-name {
-  padding-left: 0.6rem;
+.logo-link .product-name {
+  color: black;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
-.logo-link.nav-link,
-.logo-link:focus.nav-link:focus {
-  height: 4rem;
-}
-.nav-link:hover {
-  background-color: #dfdfdf;
-}
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-li {
-  list-style: none;
-}
-.nav-link,
-.nav-link:focus,
-.nav-link:visited {
+.nav-link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: black;
-  display: flex;
-  align-items: center;
-  min-height: 5.6rem;
-  padding: 0.8rem 1.6rem;
-}
-.nav-link > div {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-  overflow: hidden;
 }
 .active-nav-link {
-  background-color: #f3f3f3;
+  font-weight: 600;
 }
+
 </style>
